@@ -24,9 +24,8 @@ class _YZMinePageWidgetState extends State<YZMinePageWidget>
   /// stream流机制(发布订阅模式)
   final StreamController<double> _streamController = StreamController();
 
-  // ignore: unused_field
   late Animation<double> _animation;
-  // ignore: unused_field
+
   late final AnimationController _controller;
 
   @override
@@ -38,7 +37,8 @@ class _YZMinePageWidgetState extends State<YZMinePageWidget>
 
   // 初始化数据
   void initData() {
-    _controller = AnimationController(vsync: this);
+    _controller = AnimationController(
+        vsync: this, duration: const Duration(milliseconds: 300));
   }
 
   @override
@@ -121,15 +121,27 @@ class _YZMinePageWidgetState extends State<YZMinePageWidget>
 
   /// 初始化动画
   void _initAnimation(bool hide) {
-    _animation = Tween(begin: _topMarin, end: hide ? 0.0 : _contentHeight)
-        .animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut))
-      ..addListener(() {
-        _streamController.sink.add(_topMarin = _animation.value);
-      })
-      ..addStatusListener((status) {
-        _streamController.sink.add(_topMarin = hide ? 0.0 : _contentHeight);
-        _hideTop = hide;
-      });
+    _animation = Tween<double>(
+      begin: _topMarin,
+      end: hide ? 0.0 : _contentHeight,
+    ).animate(CurvedAnimation(
+      parent: _controller,
+      curve: Curves.easeIn,
+    ))
+      ..addListener(
+        () {
+          _streamController.sink.add(_topMarin = _animation.value);
+        },
+      )
+      ..addStatusListener(
+        (status) {
+          if (status == AnimationStatus.completed) {
+            _streamController.sink
+                .add(_topMarin = hide ? 0.0 : _contentHeight - 300.0);
+            _hideTop = hide;
+          }
+        },
+      );
   }
 
   /// 执行动画

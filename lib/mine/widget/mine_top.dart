@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:wechat/util/color_util.dart';
 
 class YZMineTopWidget extends StatelessWidget {
-  const YZMineTopWidget({Key? key}) : super(key: key);
+  YZMineTopWidget({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -16,7 +16,7 @@ class YZMineTopWidget extends StatelessWidget {
           color: YZColors.main_page_background_color,
         ),
         Positioned(
-          top: (window.physicalSize.height + 44.0),
+          top: 500.0, //(window.physicalSize.height / 2.0 - 44.0 - 200.0),
           left: 0.0,
           right: 0.0,
           child: Row(

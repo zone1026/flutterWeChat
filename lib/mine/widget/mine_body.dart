@@ -7,7 +7,11 @@ import 'package:wechat/mine/widget/mine_content.dart';
 
 class YZMineBodyWidget extends StatelessWidget {
   final double topMarin;
-  YZMineBodyWidget({Key? key, required this.topMarin}) : super(key: key);
+
+  const YZMineBodyWidget({
+    Key? key,
+    required this.topMarin,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +22,7 @@ class YZMineBodyWidget extends StatelessWidget {
           left: 0.0,
           right: 0.0,
           height: topMarin,
-          child: const YZMineTopWidget(),
+          child: YZMineTopWidget(),
         ),
         Positioned(
           top: topMarin,
