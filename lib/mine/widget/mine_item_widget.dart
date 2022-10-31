@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:wechat/mine/model/mine_model.dart';
 import 'package:wechat/util/color_util.dart';
-import 'package:wechat/util/utils.dart';
 
 class YZMineItemWidget extends StatelessWidget {
   final YZMineItemModel model;
@@ -98,13 +97,15 @@ class YZMineItemWidget extends StatelessWidget {
             padding: EdgeInsets.zero,
           ),
         ),
-        SizedBox(
+        const SizedBox(
           width: 12.0,
           height: 30.0,
-          child: Image(
-              image: AssetImage(
-                  YZUtils.assetsImagePath('common/common_arrow_right'))),
-        ),
+          child: Icon(
+            Icons.arrow_forward_ios,
+            size: 18.0,
+            color: YZColors.arrow_forward_color,
+          ),
+        )
       ],
     );
   }

@@ -27,6 +27,9 @@ class YZColors {
   /// 文本副标题颜色
   static const Color text_subtitle_color = Color.fromRGBO(102, 102, 102, 1.0);
 
+  /// 箭头指示icon颜色
+  static const Color arrow_forward_color = Color.fromRGBO(153, 153, 153, 1.0);
+
   /// item widget分割线题颜色
   static const Color item_widget_divider_color =
       Color.fromRGBO(229, 229, 229, 1.0);

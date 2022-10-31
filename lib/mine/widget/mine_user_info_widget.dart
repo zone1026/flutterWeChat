@@ -105,13 +105,15 @@ class YZMineUserInfoWidget extends StatelessWidget {
               image: AssetImage(YZUtils.assetsImagePath('mine/mine_scan'))),
         ),
         const Padding(padding: EdgeInsets.only(left: 4.0)),
-        SizedBox(
+        const SizedBox(
           width: 12.0,
           height: 30.0,
-          child: Image(
-              image: AssetImage(
-                  YZUtils.assetsImagePath('common/common_arrow_right'))),
-        ),
+          child: Icon(
+            Icons.arrow_forward_ios,
+            size: 18.0,
+            color: YZColors.arrow_forward_color,
+          ),
+        )
       ],
     );
   }
