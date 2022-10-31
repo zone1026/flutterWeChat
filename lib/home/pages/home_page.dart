@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:wechat/util/app_bar_util.dart';
-import 'package:wechat/util/color_util.dart';
 
 class YZHomePageWidget extends StatefulWidget {
   const YZHomePageWidget({Key? key}) : super(key: key);

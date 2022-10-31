@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class YZUtils {
   /// 图片资源路径
   ///

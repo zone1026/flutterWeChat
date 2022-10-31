@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:wechat/mine/model/mine_model.dart';
 import 'package:wechat/mine/widget/mine_item_widget.dart';
+import 'package:wechat/mine/widget/mine_user_info_widget.dart';
 
 class YZMineContentWidget extends StatelessWidget {
   YZMineContentWidget({Key? key}) : super(key: key);
@@ -22,6 +23,9 @@ class YZMineContentWidget extends StatelessWidget {
 
   /// 初始化数据
   void _initData() {
+    _items.add(YZMineItemModel(YZMineItemType.user));
+    _items.add(YZMineItemModel(YZMineItemType.padding));
+
     _items.add(YZMineItemModel(YZMineItemType.pay));
     _items.add(YZMineItemModel(YZMineItemType.padding));
 
@@ -39,6 +43,15 @@ class YZMineContentWidget extends StatelessWidget {
     for (var model in _items) {
       if (model.type == YZMineItemType.padding) {
         widgetList.add(const Padding(padding: EdgeInsets.only(top: 10.0)));
+      } else if (model.type == YZMineItemType.user) {
+        widgetList.add(YZMineUserInfoWidget(
+          nickName: '微信昵称',
+          portraitUrl:
+              'https://flutter.cn/assets/images/cn/flutter-cn-logo.png',
+          onUserInfoTap: () {
+            print('click user Info');
+          },
+        ));
       } else {
         widgetList.add(
           YZMineItemWidget(

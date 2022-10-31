@@ -7,6 +7,9 @@ enum YZMineItemType {
   /// section间距item类型
   padding,
 
+  /// 用户信息item类型
+  user,
+
   /// 支付item类型
   pay,
 

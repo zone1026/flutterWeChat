@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:wechat/find/model/find_model.dart';
 import 'package:wechat/util/color_util.dart';
+import 'package:wechat/util/utils.dart';
 
 class YZFindItemWidget extends StatelessWidget {
   final YZFindItemModel model;
@@ -98,14 +99,13 @@ class YZFindItemWidget extends StatelessWidget {
             padding: EdgeInsets.zero,
           ),
         ),
-        const SizedBox(
+        SizedBox(
           width: 12.0,
           height: 30.0,
-          child: Icon(
-            Icons.arrow_forward_ios,
-            size: 18.0,
-          ),
-        )
+          child: Image(
+              image: AssetImage(
+                  YZUtils.assetsImagePath('common/common_arrow_right'))),
+        ),
       ],
     );
   }

@@ -1,20 +1,14 @@
 // ignore_for_file: avoid_print
 
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:wechat/util/color_util.dart';
 
 class YZMineTopWidget extends StatelessWidget {
-  YZMineTopWidget({Key? key}) : super(key: key);
+  const YZMineTopWidget({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Stack(
       clipBehavior: Clip.hardEdge,
       children: [
-        Container(
-          color: YZColors.main_page_background_color,
-        ),
         Positioned(
           top: 500.0, //(window.physicalSize.height / 2.0 - 44.0 - 200.0),
           left: 0.0,
