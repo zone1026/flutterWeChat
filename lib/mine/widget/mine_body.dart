@@ -1,5 +1,7 @@
 // ignore_for_file: avoid_print
 
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 import 'package:wechat/mine/widget/mine_top.dart';
@@ -16,15 +18,17 @@ class YZMineBodyWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    final height =
+        MediaQuery.of(context).size.height - kBottomNavigationBarHeight;
+    return Material(
       color: YZColors.main_page_background_color,
       child: Stack(
         children: [
           Positioned(
-            top: 0.0,
+            top: -(max(height - topMarin, 0.0)),
             left: 0.0,
             right: 0.0,
-            height: topMarin,
+            height: height,
             child: const YZMineTopWidget(),
           ),
           Positioned(

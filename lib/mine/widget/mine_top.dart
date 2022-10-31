@@ -10,8 +10,8 @@ class YZMineTopWidget extends StatelessWidget {
       clipBehavior: Clip.hardEdge,
       children: [
         Positioned(
-          top: 500.0, //(window.physicalSize.height / 2.0 - 44.0 - 200.0),
           left: 0.0,
+          bottom: 88.0,
           right: 0.0,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,

@@ -21,28 +21,28 @@ class YZMineUserInfoWidget extends StatelessWidget {
     // 顶部安全距离
     double topMarin = MediaQuery.of(context).padding.top;
 
-    return GestureDetector(
-      onTap: () {
-        onUserInfoTap();
-      },
-      child: SizedBox(
-        height: topMarin + 130.0,
-        child: Stack(
-          children: [
-            Container(
-              color: Colors.white,
-            ),
-            Positioned(
-              top: topMarin + 30.0,
-              left: 20.0,
-              child: _userInfoWidget(nickName, portraitUrl),
-            ),
-            Positioned(
-              top: topMarin + 60.0,
-              right: 15.0,
-              child: _scanWidget(),
-            ),
-          ],
+    return Ink(
+      color: Colors.white,
+      child: InkWell(
+        onTap: () {
+          onUserInfoTap();
+        },
+        child: SizedBox(
+          height: topMarin + 130.0,
+          child: Stack(
+            children: [
+              Positioned(
+                top: topMarin + 30.0,
+                left: 20.0,
+                child: _userInfoWidget(nickName, portraitUrl),
+              ),
+              Positioned(
+                top: topMarin + 60.0,
+                right: 15.0,
+                child: _scanWidget(),
+              ),
+            ],
+          ),
         ),
       ),
     );

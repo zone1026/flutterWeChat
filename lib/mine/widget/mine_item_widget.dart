@@ -65,7 +65,6 @@ class YZMineItemWidget extends StatelessWidget {
 
   Container _itemWidget() {
     return Container(
-      color: Colors.white,
       padding: const EdgeInsets.only(left: 15.0, right: 18.0),
       child: _contentWidget(),
     );
